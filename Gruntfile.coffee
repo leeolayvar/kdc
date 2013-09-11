@@ -23,7 +23,6 @@ module.exports = (grunt) ->
         ext: '.js'
         src: [
           'index.coffee'
-          'bin/**/*.coffee'
           'lib/**/*.coffee'
           'runtime/**/*.coffee'
           'test/**/*.coffee'

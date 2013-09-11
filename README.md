@@ -51,6 +51,35 @@ in the background of the app launching and in a configurable way, and will
 prompt the user informing that the KDApp has VM-side dependencies that
 are being installed.
 
+## To Wrap, or Merge
+
+Since the compiler is created, made, and used by Koding primarily, we don't
+want to reimplement that. With that said, my efforts will be focused on
+working around the compiler. The way i see it, this feature set has two
+options. Mering, or Wrapping.
+
+### Merging
+
+Merging is a pretty basic idea, when this is feature complete i'll make a PR
+and FKA and I can discuss if this is an insane project hah. If he agrees
+with it, this code will be merged back into the "official" kdc.
+
+### Wrap / Brute Force
+
+If he does not like kdc-plus *(not the end of the world)*, we still know that
+we need these features. If it is decided that they are above and beyond
+what kdc is intended for, we will rename this project and effectively make
+this kdc-plus. The intention though, will still be not to replace any
+functionality of kdc. With that said, we will have to wrap/inject/hack
+into kdc upon installation. Likely by forcefully overwriting the global
+kdc installation.
+
+Why the brute force? Well we want to make sure and preserve the user Koding
+centric workflow of `create app -> click compile -> view app` as well as
+`create app -> open app -> compile during open -> view app`. Since we're
+preserving that workflow, we have to use the `kdc` global namespace. Hence
+the brute force overwriting.
+
 ## Drawbacks
 
 There are a few issues with the above system, and in an effort to identify

@@ -1,25 +1,34 @@
 {
   "name": "kdc",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Koding Apps Compiler",
-  "main": "index.js",
-  "bin": {
-    "kdc": "./bin/kdc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/koding/kdc"
-  },
+  "author": "Fatih Kadir Akin",
+  "constributors": [
+    {
+      "name": "Fatih Kadir Akin",
+    },
+    {
+      "name": "Lee Olayvar",
+      "email": "leeolayvar@gmail.com"
+    }
+  ],
+  "license": "GPL",
   "keywords": [
     "koding",
     "app",
     "compiler"
   ],
-  "author": "Fatih Kadir Akin",
-  "license": "GPL",
-  "bugs": {
-    "url": "https://github.com/koding/kdc/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leeolayvar/kdc"
   },
+  "bugs": {
+    "url": "https://github.com/leeolayvar/kdc/issues"
+  },
+  "bin": {
+    "kdc": "./bin/kdc"
+  },
+  "main": "index.js",
   "dependencies": {
     "coffee-script": "latest"
   }

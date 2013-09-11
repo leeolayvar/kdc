@@ -31,7 +31,7 @@
     "prepublish": "./node_modules/grunt-cli/bin/grunt prepublish"
   },
   "bin": {
-    "kdc": "./build/bin/kdc"
+    "kdc": "./build/bin/kdc.js"
   },
   "main": "./build/index.js",
   "devDependencies": {
@@ -40,7 +40,8 @@
     "grunt-contrib-coffee": "~0.7.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-mocha-cli": "~1.1.0",
-    "coffee-script": "~1.6.3"
+    "coffee-script": "~1.6.3",
+    "grunt-contrib-copy": "~0.4.1"
   },
   "dependencies": {}
 }

@@ -29,10 +29,21 @@ module.exports = (grunt) ->
           'test/**/*.coffee'
         ]
 
+    copy:
+      bin:
+        expand  : true
+        cwd     : './'
+        src     : 'bin/kdc.js'
+        dest    : 'build'
+        
+
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
 
-  grunt.registerTask 'build', ['clean', 'coffee']
-  grunt.registerTask 'test', ['clean', 'coffee']
+  grunt.registerTask 'build', ['clean', 'coffee', 'copy']
+  grunt.registerTask 'test', []
+  grunt.registerTask 'prepublish', ['build', 'test']
 
-  grunt.registerTask 'default', ['build']
+  grunt.registerTask 'default', ['prepublish']
+

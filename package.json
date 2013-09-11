@@ -28,7 +28,7 @@
   "scripts": {
     "build": "./node_modules/grunt-cli/bin/grunt build",
     "test": "./node_modules/grunt-cli/bin/grunt test",
-    "prepublish": "./node_modules/grunt-cli/bin/grunt prepublish",
+    "prepublish": "./node_modules/grunt-cli/bin/grunt prepublish"
   },
   "bin": {
     "kdc": "./build/bin/kdc"

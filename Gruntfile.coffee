@@ -13,15 +13,15 @@
 module.exports = (grunt) ->
   grunt.initConfig
     clean:
-      'build': ['build']
+      build: ['build']
 
     coffee:
       all:
-        expand: true
-        cwd: './'
-        dest: 'build'
-        ext: '.js'
-        src: [
+        expand  : true
+        cwd     : './'
+        dest    : 'build'
+        ext     : '.js'
+        src     : [
           'index.coffee'
           'lib/**/*.coffee'
           'runtime/**/*.coffee'
@@ -34,15 +34,23 @@ module.exports = (grunt) ->
         cwd     : './'
         src     : 'bin/kdc.js'
         dest    : 'build'
+
+    mochacli:
+      options:
+        require : ['should']
+        reporter: 'nyan'
+        bail    : true
+      all: ['build/test/*.js']
         
 
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-copy'
+  grunt.loadNpmTasks 'grunt-mocha-cli'
 
   grunt.registerTask 'build', ['clean', 'coffee', 'copy']
-  grunt.registerTask 'test', []
-  grunt.registerTask 'prepublish', ['build', 'test']
-
+  grunt.registerTask 'test:nobuild', ['mochacli']
+  grunt.registerTask 'test', ['build', 'test:nobuild']
+  grunt.registerTask 'prepublish', ['test']
   grunt.registerTask 'default', ['prepublish']
 

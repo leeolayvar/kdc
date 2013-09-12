@@ -42,7 +42,8 @@
     "grunt-contrib-copy": "~0.4.1",
     "grunt-mocha-cli": "~1.1.0",
     "coffee-script": "~1.6.3",
-    "should": "~1.2.2"
+    "should": "~1.2.2",
+    "verbal-expressions": "~0.1.0"
   },
   "dependencies": {
     "MD5": "~1.1.0"

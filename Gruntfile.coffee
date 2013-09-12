@@ -32,8 +32,11 @@ module.exports = (grunt) ->
       bin:
         expand  : true
         cwd     : './'
-        src     : 'bin/kdc.js'
         dest    : 'build'
+        src     : [
+          'bin/**/*.js'
+          'test/stubs/**/*.*'
+        ]
 
     mochacli:
       options:

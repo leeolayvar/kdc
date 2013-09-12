@@ -44,5 +44,7 @@
     "coffee-script": "~1.6.3",
     "should": "~1.2.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "MD5": "~1.1.0"
+  }
 }

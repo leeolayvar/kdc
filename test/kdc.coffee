@@ -13,19 +13,18 @@ verexp      = require 'verbal-expressions'
 
 
 
-describe 'kdc', ->
-  kdc_path  = path.join __dirname, '..', 'bin', '_kdc.js'
+describe 'kdc()', ->
+  kdc_path  = path.join __dirname, '..', 'bin', 'kdc.js'
 
 
   describe 'a simple project', ->
     stub_path = path.join __dirname, 'stubs', 'nodeps'
 
     it 'should compile without failing', (done) ->
-      #kdcp = spawn 'node', [kdc_path, stub_path]
       execFile 'node', [kdc_path, stub_path], (err, stdout, stderr) ->
-        should.not.exist err
         # We're ignoring the Unicode LF
         stdout[...-1].should.equal 'Application has been compiled!'
+        should.not.exist err
         stderr.should.equal ''
         done()
 
